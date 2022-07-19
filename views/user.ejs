@@ -1,0 +1,39 @@
+<%-include('include/header') %>
+    <style>
+      .card-body {
+        background-color: whitesmoke;
+        width: 800px;
+        position: absolute;
+        top: 90px;
+        left: 150px;
+      }
+    </style>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h3>Add New User</h3>
+                <form action="/api/user" method="post"> 
+                   
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aaria-describedby="emailHelp" required >
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Email</label>
+                        <input type="email" name="email" required  class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" name="password"  class="form-control" id="exampleInputPassword1" required >
+                    </div>
+                    
+                    <button type="submit" onclick="post(`<%= user._id %>`)" class="btn btn-outline-dark">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <%-include('include/footer') %>

@@ -1,0 +1,41 @@
+
+<%-include('include/header') %>
+    <style>
+      .card-body {
+        background-color: whitesmoke;
+        width: 800px;
+        position: absolute;
+        top: 90px;
+        left: 150px;
+      }
+    </style>
+    <div class="container">
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h3>Update This User</h3>
+                <form method="POST" id="update-user">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">User Name</label>
+                        <input type="text" value="<%= user.name %>" name="user" class="form-control" id="username" aria-describedby="emailHelp">
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Gender</label>
+                        <input type="email" value="<%= user.email %>" name="email" class="form-control" id="email" aaria-describedby="emailHelp">
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" value="<%= user.password %>" name="password" class="form-control" id="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    
+                    <button type="button" onclick="Update(`<%= user._id %>`)" class="btn btn-outline-dark">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <%-include('include/footer') %>
+    

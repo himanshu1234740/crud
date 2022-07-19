@@ -1,0 +1,38 @@
+<%-include('include/header') %>
+    <main>
+        <div class="container mt-4">
+            
+            <a href="user"  type="button" class="btn btn-outline-dark"><h4>Add New User</h4></a>
+        </div>
+        <div class="container mt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Username</th>
+                        <th scope="col">email</th>
+                        <th scope="col">password</th>
+                        
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% user.forEach((e)=>{ %>
+                        
+
+                    <tr>
+                        
+                        <td><%= e.name %></td>
+                        <td><%= e.email %></td>
+                        <td><%= e.password %></td>
+                        
+                        <td> <a href="update?id=<%= e._id %>" type="button" class="btn btn-outline-success">Update</a>
+                            <button onclick="Delete(`<%= e._id %>`)"  type="button" class="btn btn-outline-danger">Delete</button> </td>
+                    </tr>
+                    <% }) %>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <%-include('include/footer') %>
